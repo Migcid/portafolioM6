@@ -2,7 +2,7 @@
 
 <h1 class="text-center mt-5">Inventario</h1>
 
-{{!-- // ahora tenemos que cargar una tabla la buscamos en Bootstrap section tables --}}
+{{!-- PASO 1 INVENTARIO ahora tenemos que cargar una tabla la buscamos en Bootstrap section tables solo le damos los nombres de las categorias que queremos tener y en el each del paso 2 ingrsamos los datos reales --}}
 
 <section>
 
@@ -10,32 +10,49 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
+      <th scope="col">Imagen</th>
       <th scope="col">Nombre</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Precio</th>
       <th scope="col">Stock</th>
+      <th scope="col">Modificar</th>
+      <th scope="col">Eliminar</th>
     </tr>
   </thead>
+
+  {{! PASO 2 INV. despues de crear la tbla con los datos, hay que crear el helpers del each para recorrer los productos}}
+
+
   <tbody>
+    {{#each productos}}
+
+    {{! por cada producto que exista agregamos una punto, como sigue}}
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">{{this.id}}</th>
+      <td><img src="/public/img/{{this.imagen}}" alt="{{nombre}}"></td>
+      <td>{{this.nombre}}</td>
+      <td>{{this.descripcion}}</td>
+      <td>${{this.precio}}</td>
+      <td>{{this.stock}}</td> 
+        {{! creamos dos botones}}
+      <td><a href="/update/productos/{{this.id}}" class="btn btn-outline-warning $active-border: $black">Modificar</a></td> 
+      {{! podemos crear una vista para actualizar el producto ==> updateProducto.handlebars}}
+      <td><a class="btn btn-outline-danger">Eliminar</a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
+    {{/each}}
+    
   </tbody>
 </table>
     
 </section>
 
+<style>
+table img{
+    width: 80px;
+}
+
+*{
+    margin: 0%;
+}
+</style>

@@ -1,0 +1,69 @@
+<h1 class="text-center mt-5">Actualizar Prodcutos</h1>
+
+{{!-- creamos una una ruta ahora en el index.js app.get /productos/:id cnon ruta dinamica desde el ID --}}
+
+
+{{#if error }}
+
+<h2>Producto no encontrado o no existe en Base de Datos.</h2>
+
+{{else}}{{! si no existe un error en el producto, colocamos un ELSE para mostar toda la informacion del producto con un formulario}}
+
+<form id="updateProducto">
+    <div class="form-floating">
+        <input  class="form-control" type="text" name="" id="" value="{{producto.id}} "disabled>
+        <label for="floatingInput">ID</label>
+    
+    </div>
+    <div class="form-floating mt-3">
+        <input class="form-control" type="text" name="" id="" value="{{producto.nombre}} " required >
+        <label for="floatingInput">Nombre: </label>
+    </div>
+
+    <div class="form-floating mt-3">
+        <input class="form-control" type="text" name="" id="" value="{{producto.descripcion}} " required>
+        <label for="floatingInput">Descripcion: </label>
+    </div>
+    <div class="form-floating mt-3">
+        <input class="form-control" type="text" name="" id="" value="{{producto.stock}} "required >
+        <label for="floatingInput">Stock: </label>
+
+    </div>
+    <div class="form-floating mt-3">
+        <input class="form-control" type="number" name="" id="" value="{{producto.precio}} "required >
+        <label for="floatingInput">Precio: </label>
+    </div>
+    <div class="form-floating mt-3">
+         Imagen: <input class="form-control" type="file" >
+    <img src="/public/img/{{producto.imagen}}" alt="{{nombre}}"
+
+    </div>
+
+    
+
+    
+   
+    
+   >
+
+    <div>
+        <button type="submit" class="btn btn-outline-warning mt-3">Modificar</button>
+    </div>
+
+</form>
+
+{{/if}}
+
+
+<style>
+#updateProducto img {
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: 40%;
+}
+
+</style>
+
+
+

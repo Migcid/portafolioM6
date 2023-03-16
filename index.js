@@ -60,6 +60,23 @@ const leerProductos = () => {
 
 }
 
+const leerProductosPorID = (id) => {
+  return new Promise((resolve, reject)=> { //lo hace como promesa 
+    fs.readFile("productos.json", "utf-8", (error, data)=> {
+      if(error) return reject("Error al cargar los productos.");
+      let productos = JSON.parse(data)
+      let found = productos.productos.find(producto => producto.id == id);
+      if(found){
+        resolve(found)
+
+      }else{
+        reject("Producto no encontrado.")
+      }
+     
+    })
+  })
+
+}
 
 // 2 ahora hay que crear un archivo json con los productos.
 
@@ -82,7 +99,7 @@ app.get("/", (req, res) =>{
 
 //RUTA DEL INVENTARIO***********
 
-app.get("/", (req, res) =>{
+app.get("/inventario", (req, res) =>{
   leerProductos().then(productos=> {
     res.render("inventario", {
       productos
@@ -95,4 +112,22 @@ app.get("/", (req, res) =>{
 
 })
 })
+// luego de cargar el get del inventario hay que ir al inventario.hbs para cargar la tabla
 
+
+// ruta 3 del updateProducto.handlebars y aparte de crear esta ruta tenemos que crear un metodo igual que el de las funciones y lo hacemos en funciones
+
+app.get("/update/productos/:id", (req, res) =>{
+  let { id } = req.params;
+  leerProductosPorID(id).then(producto => {
+    res.render("updateProducto", {
+      producto
+    })
+
+  }).catch(error => {
+    res.render("updateProducto", {
+      error
+    })
+  })
+
+}) // 16:18 minutos

@@ -11,7 +11,7 @@
         {
             "id": 2,
             "nombre": "Codo so-so 1/2",
-            "descripcion": "Codo Bronce",
+            "descripcion": "Codo Bronce soldar ambos lados",
             "precio": 1200,
             "stock": 50,
             "imagen": "codoBronceSo-So.jpg"
@@ -19,15 +19,15 @@
         {
             "id": 3,
             "nombre": "Codo so-hi 1/2",
-            "descripcion": "Codo bronce hilo interior",
+            "descripcion": "Codo bronce hilo interior soldar un extremo y el otro extremo con rosca interior",
             "precio": 1900,
-            "stock": 50,
+            "stock": 10,
             "imagen": "codoBronceSo-HI.jpg"
         },
         {
             "id": 4,
             "nombre": "Codo so-he 1/2",
-            "descripcion": "Codo bronce hilo exterior",
+            "descripcion": "Codo bronce hilo exterior <br>soldar un extremo y el otro extremo con rosca interior",
             "precio": 1850,
             "stock": 50,
             "imagen": "codoBronceSo-He.jpg"
