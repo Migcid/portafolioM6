@@ -33,19 +33,11 @@
         <input class="form-control" type="number" name="" id="" value="{{producto.precio}} "required >
         <label for="floatingInput">Precio: </label>
     </div>
-    <div class="form-floating mt-3">
-         Imagen: <input class="form-control" type="file" >
-    <img src="/public/img/{{producto.imagen}}" alt="{{nombre}}"
-
+    <div class="form-floating mt-3"> 
+       <input class="form-control" type="file" >
+    <img src="/public/img/{{producto.imagen}}" alt="{{nombre}}">
+    
     </div>
-
-    
-
-    
-   
-    
-   >
-
     <div>
         <button type="submit" class="btn btn-outline-warning mt-3">Modificar</button>
     </div>
@@ -57,8 +49,8 @@
 
 <style>
 #updateProducto img {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     margin-top: 50px;
     margin-left: 40%;
 }
