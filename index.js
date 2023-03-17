@@ -130,4 +130,10 @@ app.get("/update/productos/:id", (req, res) =>{
     })
   })
 
-}) // 16:18 minutos
+}) 
+
+app.put("productos", (req, res) => {
+  console.log(req.body);
+  console.log(req.files)
+  res.send("recibiendo datos para actualizar")
+})
